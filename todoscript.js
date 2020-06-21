@@ -61,24 +61,27 @@ const todoDiv = document.createElement('div');
 
 }
 
-
+var checker;
 
 function checkDelete(e){
 	const item = e.target;
 	
 	// console.log(item.classList);
 
-	if(item.classList[0]=="fas"){
+	if(item.classList[1]=="fa-trash"){
+		console.log(item.parentElement);
 		const todo = item.parentElement.parentElement;
 		todo.remove();
+		if(checker!=true){
 		count--;
+	}
 		tasknumber.innerHTML = count+" tasks left";
 	}
 
 if(item.classList[0]=="complete-btn"){
 		const todo = item.parentElement;
 		
-		const checker = todo.classList.toggle("done");
+		 checker = todo.classList.toggle("done");
 	
 		if(checker==true){
 			count--;
