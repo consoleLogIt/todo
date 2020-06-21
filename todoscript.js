@@ -61,7 +61,7 @@ const todoDiv = document.createElement('div');
 
 }
 
-var checker;
+var check;
 
 function checkDelete(e){
 	const item = e.target;
@@ -72,7 +72,7 @@ function checkDelete(e){
 		console.log(item.parentElement);
 		const todo = item.parentElement.parentElement;
 		todo.remove();
-		if(checker!=true){
+		if(check!=true){
 		count--;
 	}
 		tasknumber.innerHTML = count+" tasks left";
@@ -81,9 +81,9 @@ function checkDelete(e){
 if(item.classList[0]=="complete-btn"){
 		const todo = item.parentElement;
 		
-		 checker = todo.classList.toggle("done");
+		 check = todo.classList.toggle("done");
 	
-		if(checker==true){
+		if(check==true){
 			count--;
 		}
 		else{
